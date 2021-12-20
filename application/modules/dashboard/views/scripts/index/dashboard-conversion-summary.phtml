@@ -1,0 +1,37 @@
+<div class="col-md-12">
+ <table border="1" class="box box-solid box-info" style="width:70%;margin:auto;margin-bottom: 12px;font-weight: bold;margin-top:20px;">
+ <tr class="td_title">
+ <th>&nbsp;</th>
+ <th>Total Queries </th>
+ <th>Live Queries</th>
+ <th style="width:22%;">Conversion Rate</th>
+ </tr>
+ 
+ <tr>
+ <td class="td_title">Total Data Conversion</td>
+ <td align="center"><?=$this->totalQuery?> </td>
+ <td align="center"><?=$this->liveQuery?></td>
+ <td align="center"><?=round($this->conversionRate, 2, PHP_ROUND_HALF_UP);?></td>
+ </tr>
+ 
+  <tr>
+ <td class="td_title">3 Months Conversion Average</td>
+ <td align="center"><?=$this->totalQuery2?> </td>
+ <td align="center"><?=$this->liveQuery2?></td>
+ <td align="center"><?=round($this->conversionRate2, 2, PHP_ROUND_HALF_UP);?></td>
+ </tr>
+   <tr>
+ <td class="td_title">90 Days Conversion Average</td>
+ <td align="center"><?=$this->totalQuery90?> </td>
+ <td align="center"><?=$this->liveQuery90?></td>
+ <td align="center"><?=round($this->conversionRate90, 2, PHP_ROUND_HALF_UP);?></td>
+ </tr>
+ <tr>
+ <td class="td_title">Current Month Conversion</td>
+ <td align="center"><?=$this->totalQuery1?> </td>
+ <td align="center"><?=$this->liveQuery1?></td>
+ <td align="center"><?=round($this->conversionRate1, 2, PHP_ROUND_HALF_UP);?></td>
+ </tr>
+ 
+ </table>
+ </div>
