@@ -1,0 +1,42 @@
+<?php $date = new Zend_Date();
+$this->userObj = new Manageuser_Model_Manageuser();
+ 
+ //echo "<pre>";
+ //print_r($this->tatScore);
+ ?>
+<table id="example1" class="table table-bordered table-striped table-responsive">
+              <thead>
+                 <tr>
+  				 <th>User Name</th>
+				 <th>No. of Query</th>
+				 <th>Average TAT</th>
+                 <th>Average TAT Score</th>
+                 <th>No of actions</th>
+                  
+  				 </tr>
+                 </thead>
+                       <tbody>  
+                          <?php $i=1;
+                          foreach($this->tatScore as $score)
+						  {
+							  $min=round($score['total_minute']/$score['total_rows'],2);
+							  $totalQuery=$this->userObj->getTatUserQuery($score['user_id']);
+						  ?>
+                                <tr>
+ 								<td><?=$score['username']?></td>
+								<td><?=count($totalQuery)?></td>
+                                <td><?php echo $this->userObj->hoursandmins($min);
+								?></td>
+                                <td><?php echo round(($score['total_score']/$score['total_rows']),2);?></td>
+  							 <td><?=$score['total_rows']?></td>
+  							</tr>
+                         <?php $i++; }?>
+                  </tbody>
+              </table>
+
+
+<script>
+  $(document).ready(function() {
+    $("#example1").DataTable();
+   });
+</script>
