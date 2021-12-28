@@ -1122,7 +1122,7 @@ $limit=20;
 	{
 	$this->view->CommentInfo = $this->QueryObj->GetComentsAssign($QueryInfo['assign_id'],'all');	
 	}
-	 
+	 $this->view->internalCommentData =$this->QueryObj->GetComentsAssign($QueryInfo['assign_id'],'internalComments');
 	 
 	 $this->view->tagsArr=$this->tagsObj->getAllCategoryTags($this->userInfo->category);
 	 $this->view->TatScore=$this->userObj->getParticularTatScore($QueryInfo['assign_id']);
