@@ -47,7 +47,14 @@ use Postmark\Models\PostmarkAttachment;
 		  
 		  $status = new Managequery_Model_Status();
 		  $this->view->updateStatus=$status->getAllStatus();
+		  if($_SERVER['HTTP_HOST']=='instacrm.rapidcollaborate.com')
+		  {
 		  $this->postmarkclient = new PostmarkClient("9e93dd6b-7993-47bb-87b6-eed1e8b937dc");
+		  }
+		  else if($_SERVER['HTTP_HOST']=='99crm.phdconsulting.in')
+		  {
+		  $this->postmarkclient = new PostmarkClient("074ddc39-9dfc-485a-8ea2-98473ceb6c26");  
+		  }
 		  
 		  $this->view->userInfo = $this->userInfo =$userObj->getUserId($userInfo->id);
 		  
