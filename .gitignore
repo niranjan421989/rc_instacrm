@@ -2,5 +2,5 @@
 
 # compiled output
 /.htaccess
-/application/application.ini
+/application/configs/application.ini
  
