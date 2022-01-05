@@ -2445,7 +2445,15 @@ $remainder_date=$this->getRequest()->getParam('remainder_date');
 			    
 			 if($this->userInfo->user_type=='admin' or $this->userInfo->user_type=='sub-admin')
 		    {
-			 $array=array('action_taken'=>$action_taken,'converted'=>$converted,'update_status'=>$update_status,'update_status_date'=>time(),"remainder_date"=>$remainder_date);
+				if($converted)
+				{
+				$array=array('action_taken'=>$action_taken,'converted'=>$converted,'update_status'=>$update_status,'update_status_date'=>time(),"remainder_date"=>$remainder_date);	
+				}
+				else
+				{
+				$array=array('action_taken'=>$action_taken,'update_status'=>$update_status,'update_status_date'=>time(),"remainder_date"=>$remainder_date);	
+				}
+			 
  		     $update= $this->QueryObj->updateUserQuery($array,$assign_id);
 		    }
 
