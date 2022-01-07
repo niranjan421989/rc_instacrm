@@ -36,12 +36,12 @@ $application->bootstrap()
 			
 			
 define('ADMIN_EMAIL' , 'niranjan.kumar@redmarkediting.com');
-define('MANDARILL_KEY' , 'zR1o2srARM_ZR_qDkr0__w');
+define('MANDARILL_KEY' , 'k_t3TU3QdFQ4Bu2_wwKxug');
  function SendMandrilMail($message)
 {
 require_once 'Mandrill_Api/src/Mandrill.php';
 
-$mandrill = new Mandrill('zR1o2srARM_ZR_qDkr0__w');
+$mandrill = new Mandrill('k_t3TU3QdFQ4Bu2_wwKxug');
 $async = false;
 $ip_pool = '';
 $result = $mandrill->messages->send($message, $async, $ip_pool);
