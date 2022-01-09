@@ -42,7 +42,7 @@ $event = new Google_Service_Calendar_Event(array(
     array('email' => 'niranjan421989@gmail.com'),
     array('email' => 'niranjan.kumar@gmail.com'),
   ),
-  'reminders' => array(
+  'reminders' => array( 
     'useDefault' => FALSE,
     'overrides' => array(
       array('method' => 'email', 'minutes' => 24 * 60),
